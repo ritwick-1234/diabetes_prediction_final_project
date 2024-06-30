@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .bold-italic {
+            font-weight: bold;
+            font-style: italic;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="bg_3_nav d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class ="my-0-mr-md-auto font-weight-normal">Diabetes-Predictor</h5>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/home_1">Home </a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/predict">Predict</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/about_project">About-Project</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/contact">Contact</a>
+        </nav>
+        <a class="btn btn-outline-primary me-3" href="/register">Sign Up</a>
+        <a class="btn btn-outline-primary" href="/logout">Log out</a>
+      </div>
+    
+        <h1 class="center-align" style="color:violet;">Welcome to Diabetes Prediction App</h1>
+        <p><strong><h3>Understanding Diabetes</h3></strong></p>
+        <p>Diabetes mellitus, commonly referred to as diabetes, is a chronic metabolic condition characterized by elevated blood sugar levels over a prolonged period...</p>
+        <p>There are several types of diabetes </p>
+        <p><h3>Type 1 Diabetes:</h3> This occurs when the immune system mistakenly attacks and destroys insulin-producing beta cells in the pancreas. As a result, the body produces little to no insulin. Type 1 diabetes typically develops in childhood or adolescence, although it can occur at any age.</p>
+        <p><h3>Type 2 Diabetes:</h3> This is the most common form of diabetes, accounting for about 90% of cases worldwide. Type 2 diabetes typically develops in adults but is increasingly being diagnosed in children and adolescents due to rising obesity rates. In Type 2 diabetes, the body becomes resistant to insulin or doesn't produce enough insulin to maintain normal blood glucose levels. Management often involves lifestyle changes such as healthy eating, regular physical activity, and sometimes medications or insulin therapy.</p>
+        <p><h3>Gestational Diabetes:</h3> Gestational diabetes develops during pregnancy and usually resolves after childbirth. However, women who have had gestational diabetes have an increased risk of developing Type 2 diabetes later in life.</p>
+        <br>
+        <p>Diabetes requires lifelong management to prevent complications such as cardiovascular disease, kidney disease, nerve damage, and eye damage...</p>
+        <p>Managing diabetes effectively involves maintaining a healthy lifestyle, monitoring blood glucose levels, taking prescribed medications as directed...</p>
+        <p>For accurate diagnosis, treatment, and management of diabetes, individuals should consult healthcare professionals who specialize in diabetes care.</p>
+        <br>
+        <p>
+            <strong style="color: green;">Introducing our Diabetes Prediction App: Know your health status now!</strong>
+            <span style="float: right;">
+                <a href="/predict" style="background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Predict</a>
+            </span>
+        </p>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

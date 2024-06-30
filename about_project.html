@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predict_diabetes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      .bold-italic {
+          font-weight: bold;
+          font-style: italic;
+      }
+      
+        .clickable-image {
+          width: 4cm;
+          height: 4cm;
+          cursor: pointer; /* Change cursor to pointer to indicate clickable */
+          display: block; /* Ensure the image is displayed as a block element */
+          margin: 0 auto; /* Center the image */
+        }
+      
+  </style>
+  </head>
+  <body>
+    <div class="bg_3_nav d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class ="my-0-mr-md-auto font-weight-normal">Diabetes-Predictor</h5>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/home_1">Home </a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/predict">Predict</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/about_project">About-Project</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/contact">Contact</a>
+        </nav>
+        <a class="btn btn-outline-primary me-3" href="/register">Sign Up</a>
+        <a class="btn btn-outline-primary" href="/logout">Log out</a>
+      </div>
+      <p><h1 style="text-align: center; color: blue; text-decoration: underline; cursor: pointer;" onmouseover="this.style.textDecoration='none'" onmouseout="this.style.textDecoration='underline'">About the Project</h1>
+      </p>
+      <p>Our diabetes prediction project utilizes a Support Vector Machine (SVM) model to predict the likelihood of diabetes based on various medical parameters. Here's an overview of the project:</p>
+      <p><h3>Data Handling</h3><br>
+        The project begins by loading a diabetes dataset, which contains several medical parameters such as glucose levels, blood pressure, and body mass index. The data is split into training and testing sets to evaluate the performance of the model.<br><br><h3>Support Vector Machine (SVM) Model</h3><br>
+        We employ an SVM model, a powerful supervised machine learning algorithm suitable for classification tasks. SVM works by finding the optimal hyperplane that separates the data into different classes. The model's hyperparameters, including kernel type, regularization parameter (C), and gamma, can be tuned to improve performance.From svc model i got an accuracy of 88.9 % which is a good accuracy.</p>
+        <p>
+          To know more about how accuracy is changed on changing kernel in SVC  <a href="https://svcdiabetespredictor-b87ezmrdpetuedtjdkahzo.streamlit.app/" class="color: blue; text-decoration: underline;">click here</a>.
+        </p>
+        <p><h3>Logistic Regression Model</h3><br>In this project i have tested the accuracy using Logistic regression .The accuracy is coming out to be 75-76 %. If you want to predict <b>you are diabetic or not and also to know about the diabetes dataset for analysis the data</b>  <a href="https://predictusinglogisticregression-98ggdqonkrudtys2rgvnyu.streamlit.app/" class="color:yellow; text-decoration: underline;">click here</a>.</p>
+        <p><h3>Decission Tree  Model</h3><br>In this project i have tested the accuracy using Decission Tree .The accuracy is coming out to be 82-83 %. If you want to know <b> about the hyperparameters</b>  <a href="https://firstproject-ne95cbrguuxejk8kbqjvtf.streamlit.app/" class="color: violet; text-decoration: underline;">click here</a>.</p>
+        <p><h3>Random Forest  Model</h3><br>In this project i have tested the accuracy using Random Forest .The accuracy is coming out to be 76 % though more accuracy can be achieved through proper tuning. If you want to know <b> about the hyperparameters</b>  <a href="https://random-juunfz5noo986gpm2zweaa.streamlit.app/" class="color: green; text-decoration: underline;">click here</a>.</p>
+        <br><h1 style="text-align: center; color: green;">Finally we have chosen SVM model for our prediction purpose</h1>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>

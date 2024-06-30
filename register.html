@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predict_diabetes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      .bold-italic {
+          font-weight: bold;
+          font-style: italic;
+      }
+      .text-center {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid orange;
+        animation: typing 6s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+      }
+      @keyframes typing {
+        0% { width: 0; }
+        50% { width: 100%; }
+        100% { width: 0; }
+      }
+      @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: orange; }
+      }
+      .text-center span {
+        display: inline-block;
+      }
+      .text-center span:nth-child(1) { color: red; }
+      .text-center span:nth-child(2) { color: orange; }
+      .text-center span:nth-child(3) { color: yellow; }
+      .text-center span:nth-child(4) { color: green; }
+      .text-center span:nth-child(5) { color: blue; }
+      .text-center span:nth-child(6) { color: indigo; }
+      .text-center span:nth-child(7) { color: red; }
+      .text-center span:nth-child(8) { color: orange; }
+      .text-center span:nth-child(9) { color: yellow; }
+      .text-center span:nth-child(10) { color: green; }
+      .text-center span:nth-child(11) { color: blue; }
+      .text-center span:nth-child(12) { color: indigo; }
+      .text-center span:nth-child(13) { color: violet; }
+      .text-center span:nth-child(14) { color: red; }
+      .text-center span:nth-child(15) { color: orange; }
+      .text-center span:nth-child(16) { color: yellow; }
+      .text-center span:nth-child(17) { color: green; }
+      .text-center span:nth-child(18) { color: blue; }
+      .text-center span:nth-child(19) { color: indigo; }
+      .text-center span:nth-child(20) { color: violet; }
+    </style>
+    
+  </head>
+  
+ 
+     <body class="bg_2-nav">
+        <!-- Navigation Bar -->
+        <div class="bg_3_nav d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <h5 class="my-0 mr-md-auto font-weight-normal">Diabetes-Predictor</h5>
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/home_1">Home </a>
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/predict">Predict</a>
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/about_project">About-Project</a>
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/contact">Contact</a>
+            </nav>
+            <a class="btn btn-outline-primary me-3" href="/register">Sign Up</a>
+            <a class="btn btn-outline-primary" href="/logout">Log out</a>
+        </div>
+        <div class="container">
+     
+     <h1 class="text-center">
+        <span style="color: red;">C</span>
+        <span style="color: orange;">r</span>
+        <span style="color: yellow;">e</span>
+        <span style="color: green;">a</span>
+        <span style="color: blue;">t</span>
+        <span style="color: indigo;">e</span>
+        &nbsp;
+        <span style="color: red;">y</span>
+        <span style="color: orange;">o</span>
+        <span style="color: yellow;">u</span>
+        <span style="color: green;">r</span>
+        &nbsp;
+        <span style="color: blue;">o</span>
+        <span style="color: indigo;">w</span>
+        <span style="color: violet;">n</span>
+        &nbsp;
+        <span style="color: red;">a</span>
+        <span style="color: orange;">c</span>
+        <span style="color: yellow;">c</span>
+        <span style="color: green;">o</span>
+        <span style="color: blue;">u</span>
+        <span style="color: indigo;">n</span>
+        <span style="color: violet;">t</span>
+      </h1>
+     
+     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card mt-100">
+                    <div class="card-body">
+                        <form class="form" method="post" action="/add_user">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="first_name" required><br>
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="last_name" required><br>
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="Uemail" required><br>
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number" required><br>
+                            <label>Password</label>
+                            <input type="password" id="password" class="form-control" name="Upassword" required><br>
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirm_password" class="form-control" name="confirm_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="checkPasswordMatch();" required><br>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.
+                            </small><br><br>
+                            <script>
+                                function checkPasswordMatch() {
+                                    var password = document.getElementById("password").value;
+                                    var confirm_password = document.getElementById("confirm_password").value;
+                                    if (password !== confirm_password) {
+                                        document.getElementById("confirm_password").setCustomValidity("Passwords do not match");
+                                    } else {
+                                        document.getElementById("confirm_password").setCustomValidity("");
+                                    }
+                                }
+                            </script>
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Register">
+                            <p class="mt-2">Already a Member?<a href="/login">Go to Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
